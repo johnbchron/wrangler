@@ -78,6 +78,8 @@ stdenv.mkDerivation (finalAttrs: {
       autoPatchelfHook
     ];
 
+  autoPatchelfIgnoreMissingDeps = [ "libc.musl-aarch64.so.1" ];
+
   # @cloudflare/vitest-pool-workers wanted to run a server as part of the build process
   # so I simply removed it
   postBuild = ''
